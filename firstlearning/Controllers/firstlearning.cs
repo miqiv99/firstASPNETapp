@@ -1,6 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using firstlearning.Data;
-using firstlearning.Models;
+﻿using firstlearning.Data;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace firstlearning.Controllers
@@ -8,7 +7,7 @@ namespace firstlearning.Controllers
     public class MenuController : Controller
     {
         private readonly MenuContext _context;
-        public MenuController(MenuContext context) 
+        public MenuController(MenuContext context)
         {
             _context = context;
         }
@@ -26,7 +25,7 @@ namespace firstlearning.Controllers
                 .Include(di => di.DishIngredients)
                 .ThenInclude(i => i.ingredient)
                 .FirstOrDefaultAsync(x => x.id == id);
-            if (dish == null) 
+            if (dish == null)
             {
                 return NotFound();
             }

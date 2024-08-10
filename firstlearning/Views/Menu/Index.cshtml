@@ -17,6 +17,9 @@
                 <div class="d-flex justify-content-center">
                     @item.Price.ToString("N2") AUS Dollars
                 </div>
+                <div class="d-flex justify-content-center">
+                    <a class="btn btn-info" asp-action="Details" asp-route-id="@item.id">View Detail</a>
+                </div>
             </div>
         }
     </div>
